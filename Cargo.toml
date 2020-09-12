@@ -1,0 +1,19 @@
+[package]
+name = "game"
+version = "0.1.0"
+authors = ["Alejandro Ríos Jasso <jassoalex97@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sdl2 = "0.34.3"
+gl = { path = "lib/gl" }
+failure = "0.1.8"
+render_gl_derive = { path = "render_gl_derive" }
+
+[build-dependencies]
+walkdir = "2.3.1"
+
+[features]
+gl_debug = ["gl/debug"]
