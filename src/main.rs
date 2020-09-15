@@ -5,6 +5,7 @@ use sdl2;
 extern crate failure;
 #[macro_use]
 extern crate render_gl_derive;
+extern crate vec_2_10_10_10;
 
 pub mod render_gl;
 pub mod resources;
@@ -21,7 +22,7 @@ struct Vertex {
     #[location = "0"]
     pos: data::Vector3,
     #[location = "1"]
-    clr: data::Vector3,
+    clr: data::u2_u10_u10_u10_rev_float,
 }
 
 fn main() {
@@ -58,15 +59,15 @@ fn run() -> Result<(), failure::Error> {
     let vertices: Vec<Vertex> = vec![
         Vertex {
             pos: (0.5, -0.5, 0.0).into(),
-            clr: (1.0, 0.0, 0.0).into(),
+            clr: (1.0, 0.0, 0.0, 1.0).into(),
         }, // bottom right
         Vertex {
             pos: (-0.5, -0.5, 0.0).into(),
-            clr: (0.0, 1.0, 0.0).into(),
+            clr: (0.0, 1.0, 0.0, 1.0).into(),
         }, // bottom left
         Vertex {
             pos: (0.0, 0.5, 0.0).into(),
-            clr: (0.0, 0.0, 1.0).into(),
+            clr: (0.0, 0.0, 1.0, 1.0).into(),
         }, // top
     ];
 
