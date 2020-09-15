@@ -10,7 +10,7 @@ edition = "2018"
 sdl2 = "0.34.3"
 gl = { path = "lib/gl" }
 failure = "0.1.8"
-render_gl_derive = { path = "render_gl_derive" }
+render_gl_derive = { path = "src/render_gl_derive" }
 
 [build-dependencies]
 walkdir = "2.3.1"
