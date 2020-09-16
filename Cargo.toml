@@ -12,6 +12,7 @@ gl = { path = "lib/gl" }
 failure = "0.1.8"
 render_gl_derive = { path = "src/render_gl_derive" }
 vec-2-10-10-10 = "0.1.2"
+nalgebra = "0.22.0"
 
 [build-dependencies]
 walkdir = "2.3.1"

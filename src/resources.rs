@@ -18,6 +18,7 @@ impl From<io::Error> for Error {
         Error::Io(other)
     }
 }
+
 pub struct Resources {
     root_path: PathBuf,
 }
@@ -31,6 +32,10 @@ impl Resources {
         Ok(Resources {
             root_path: exe_path.join(rel_path),
         })
+    }
+
+    pub fn from_exe_path() -> Result<Resources, Error> {
+        Resources::from_relative_exe_path(Path::new(""))
     }
 
     pub fn load_cstring(&self, resource_name: &str) -> Result<ffi::CString, Error> {
